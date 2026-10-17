@@ -6,10 +6,10 @@
 <title>رپ‌نامه | دانشنامه‌ی رپ فارسی</title>
 <meta name="description" content="دانشنامه‌ی چهره‌های کلیدی رپ فارسی — بیوگرافی، آثار شاخص و روایت چهار نسل">
 <style>
-@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Regular.woff') format('woff');font-weight:400}
-@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-SemiBold.woff') format('woff');font-weight:600}
-@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Bold.woff') format('woff');font-weight:700}
-@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-ExtraBold.woff') format('woff');font-weight:800}
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Regular.woff') format('woff');font-weight:400;font-display:swap}
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-SemiBold.woff') format('woff');font-weight:600;font-display:swap}
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Bold.woff') format('woff');font-weight:700;font-display:swap}
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-ExtraBold.woff') format('woff');font-weight:800;font-display:swap}
 :root{
   --black:#0b0906; --coal:#141009; --panel:#17110a;
   --choc:#2b1a0e; --choc2:#4a2c15;
@@ -26,7 +26,7 @@ body{background:var(--black);color:var(--cream);font-family:'AbarHigh',system-ui
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
 /* ---------- HERO ---------- */
 .hero{min-height:94vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:48px 20px 64px}
-.vinyl{position:absolute;top:50%;left:50%;width:min(88vmin,620px);height:min(88vmin,620px);transform:translate(-50%,-50%);border-radius:50%;opacity:.5;pointer-events:none;
+.vinyl{position:absolute;top:36%;left:50%;width:min(74vmin,540px);height:min(74vmin,540px);transform:translate(-50%,-50%);border-radius:50%;opacity:.42;pointer-events:none;
   background:repeating-radial-gradient(circle at 50% 50%, #050403 0 2px, #17110a 2px 5px);
   animation:spin 30s linear infinite}
 .vinyl::after{content:'رپ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:26%;height:26%;border-radius:50%;
@@ -108,7 +108,11 @@ footer .logo{font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:8
 .overlay.open{opacity:1;pointer-events:auto}
 .sheet{width:min(700px,100%);max-height:90vh;max-height:90dvh;overflow-y:auto;background:linear-gradient(180deg,#1d130b,#0d0906);
   border:1px solid var(--caramel);border-radius:22px;padding:36px 32px;position:relative;
-  transform:translateY(16px) scale(.98);transition:transform .25s ease;box-shadow:0 40px 90px -20px rgba(0,0,0,.9)}
+  transform:translateY(16px) scale(.98);transition:transform .25s ease;box-shadow:0 40px 90px -20px rgba(0,0,0,.9);
+  scrollbar-width:thin;scrollbar-color:#4a2c15 transparent}
+.sheet::-webkit-scrollbar{width:10px}
+.sheet::-webkit-scrollbar-track{background:transparent}
+.sheet::-webkit-scrollbar-thumb{background:#4a2c15;border-radius:8px;border:2px solid #0d0906}
 .overlay.open .sheet{transform:none}
 .x{position:absolute;top:14px;left:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.5);
   color:var(--cream);font-size:1.1rem;cursor:pointer}
