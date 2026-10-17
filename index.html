@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>رپ‌نامه | دانشنامه‌ی رپ فارسی</title>
+<meta name="description" content="دانشنامه‌ی چهره‌های کلیدی رپ فارسی — بیوگرافی، آثار شاخص و روایت چهار نسل">
+<style>
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Regular.woff') format('woff');font-weight:400}
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-SemiBold.woff') format('woff');font-weight:600}
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-Bold.woff') format('woff');font-weight:700}
+@font-face{font-family:'AbarHigh';src:url('fonts/AbarHigh-ExtraBold.woff') format('woff');font-weight:800}
+:root{
+  --black:#0b0906; --coal:#141009; --panel:#17110a;
+  --choc:#2b1a0e; --choc2:#4a2c15;
+  --caramel:#c68a45; --caramel-deep:#8a5a2a;
+  --cream:#f2e8d3; --cream-dim:#b7a684; --muted:#8d7c60;
+  --line:rgba(198,138,69,.22);
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--cream);font-family:'AbarHigh',system-ui,sans-serif;overflow-x:hidden;line-height:1.9}
+::selection{background:var(--caramel);color:#000}
+.grain{position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E")}
+/* ---------- HERO ---------- */
+.hero{min-height:94vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:48px 20px 64px}
+.vinyl{position:absolute;top:50%;left:50%;width:min(88vmin,620px);height:min(88vmin,620px);transform:translate(-50%,-50%);border-radius:50%;opacity:.5;pointer-events:none;
+  background:repeating-radial-gradient(circle at 50% 50%, #050403 0 2px, #17110a 2px 5px);
+  animation:spin 30s linear infinite}
+.vinyl::after{content:'رپ';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:26%;height:26%;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #6b4423, #2b1a0e 72%);border:2px solid var(--caramel);
+  display:flex;align-items:center;justify-content:center;color:var(--cream);font-weight:800;font-size:clamp(1.2rem,4vmin,2rem)}
+.vinyl::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:3.5%;height:3.5%;border-radius:50%;background:var(--cream);z-index:2}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.hero-inner{position:relative;z-index:2}
+.kicker{display:inline-flex;align-items:center;gap:14px;color:var(--caramel);font-weight:600;font-size:.95rem;letter-spacing:.5px;margin-bottom:18px}
+.kicker::before,.kicker::after{content:'';width:44px;height:1px;background:linear-gradient(90deg,transparent,var(--caramel))}
+.kicker::after{background:linear-gradient(90deg,var(--caramel),transparent)}
+.hero-title{font-size:clamp(4.2rem,17vw,10.5rem);font-weight:800;line-height:1.15;margin:0 0 10px;
+  background:linear-gradient(180deg,#f9efdb 10%,#e8c88f 45%,#c68a45 75%,#8a5a2a);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 30px rgba(198,138,69,.25))}
+.hero-sub{color:var(--cream-dim);font-size:clamp(1rem,2.6vw,1.3rem);margin-bottom:30px}
+.hero-stats{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.stat{border:1px solid var(--line);border-radius:14px;padding:10px 22px;background:rgba(23,17,10,.72)}
+.stat b{display:block;font-size:1.5rem;color:var(--cream);font-weight:800}
+.stat span{font-size:.82rem;color:var(--muted)}
+.cta{display:inline-block;background:linear-gradient(180deg,#d89a52,#b06f2e);color:#160d05;font-weight:800;font-size:1.05rem;
+  padding:13px 44px;border-radius:999px;text-decoration:none;box-shadow:0 12px 34px -10px rgba(198,138,69,.55);transition:transform .2s,box-shadow .2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 18px 40px -10px rgba(198,138,69,.7)}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--muted);font-size:.8rem;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{50%{transform:translate(-50%,8px)}}
+/* ---------- TOOLBAR ---------- */
+.toolbar{position:sticky;top:0;z-index:50;background:rgba(11,9,6,.96);border-bottom:1px solid var(--line);padding:12px 18px}
+.toolbar-inner{max-width:1080px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.search{flex:1;min-width:180px;display:flex;align-items:center;gap:8px;background:#000;border:1px solid var(--line);border-radius:999px;padding:9px 18px}
+.search input{flex:1;background:none;border:none;outline:none;color:var(--cream);font-family:inherit;font-size:.95rem}
+.search input::placeholder{color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:1px solid var(--line);background:transparent;color:var(--cream-dim);font-family:inherit;font-size:.85rem;font-weight:600;
+  padding:8px 18px;border-radius:999px;cursor:pointer;transition:all .2s;white-space:nowrap}
+.tab:hover{border-color:var(--caramel);color:var(--cream)}
+.tab.on{background:var(--caramel);border-color:var(--caramel);color:#160d05;font-weight:800}
+.sortsel{background:#000;border:1px solid var(--line);color:var(--cream-dim);border-radius:999px;padding:8px 14px;font-family:inherit;font-size:.85rem;outline:none}
+/* ---------- WALL ---------- */
+.wall{max-width:1080px;margin:0 auto;padding:10px 20px 30px}
+.gen-head{display:flex;align-items:center;gap:18px;margin:56px 0 8px}
+.gen-num{font-size:clamp(3.2rem,9vw,5.2rem);font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--caramel)}
+.gen-head h2{font-size:1.5rem;font-weight:800}
+.gen-head p{color:var(--muted);font-size:.9rem;margin-top:2px}
+.gen-line{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-top:20px}
+.card{background:linear-gradient(180deg,rgba(58,34,17,.5),rgba(13,9,5,.94));border:1px solid var(--line);border-radius:var(--r);
+  padding:28px 18px 22px;text-align:center;cursor:pointer;position:relative;
+  transition:transform .25s ease,border-color .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);border-color:var(--caramel);box-shadow:0 20px 44px -18px rgba(198,138,69,.4)}
+.medal{width:86px;height:86px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+  font-size:2.1rem;font-weight:800;color:var(--cream);
+  background:radial-gradient(circle at 32% 28%,#6f4624,#2b1a0e 72%);
+  border:2px solid var(--caramel);box-shadow:inset 0 0 0 5px rgba(0,0,0,.35),0 8px 22px -8px rgba(0,0,0,.8)}
+.card h3{font-size:1.18rem;font-weight:800;margin-bottom:2px}
+.card .en{color:var(--muted);font-size:.8rem;letter-spacing:1px;margin-bottom:12px}
+.card .meta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.fav{position:absolute;top:12px;left:12px;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.5);
+  color:var(--cream-dim);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.fav.on{color:#e8b64c;border-color:#e8b64c;background:rgba(232,182,76,.12)}
+.chip{display:inline-block;padding:4px 13px;border:1px solid var(--line);border-radius:999px;font-size:.78rem;color:var(--cream-dim);background:rgba(198,138,69,.07)}
+.chip.solid{background:rgba(198,138,69,.16);color:var(--cream);border-color:rgba(198,138,69,.4)}
+.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:60px 20px;border:1px dashed var(--line);border-radius:var(--r)}
+/* ---------- ERAS ---------- */
+.eras{max-width:1080px;margin:30px auto 0;padding:0 20px}
+.eras h2{font-size:1.6rem;font-weight:800;margin-bottom:6px}
+.eras>p{color:var(--muted);margin-bottom:22px}
+.era-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:760px){.era-row{grid-template-columns:repeat(2,1fr)}}
+.era{border:1px solid var(--line);border-radius:var(--r);padding:22px 18px;background:linear-gradient(180deg,rgba(43,26,14,.4),rgba(13,9,5,.9))}
+.era .n{font-size:2.4rem;font-weight:800;color:transparent;-webkit-text-stroke:1.2px var(--caramel);line-height:1;margin-bottom:8px}
+.era h3{font-size:1.05rem;margin-bottom:6px}
+.era p{font-size:.85rem;color:var(--muted);line-height:1.9}
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--line);margin-top:70px;padding:34px 20px 46px;text-align:center;color:var(--muted);font-size:.88rem}
+footer .logo{font-weight:800;font-size:1.3rem;color:var(--cream);margin-bottom:8px}
+/* ---------- MODAL ---------- */
+.overlay{position:fixed;inset:0;z-index:90;background:rgba(4,2,1,.8);display:flex;align-items:center;justify-content:center;padding:16px;
+  opacity:0;pointer-events:none;transition:opacity .25s}
+.overlay.open{opacity:1;pointer-events:auto}
+.sheet{width:min(700px,100%);max-height:90vh;max-height:90dvh;overflow-y:auto;background:linear-gradient(180deg,#1d130b,#0d0906);
+  border:1px solid var(--caramel);border-radius:22px;padding:36px 32px;position:relative;
+  transform:translateY(16px) scale(.98);transition:transform .25s ease;box-shadow:0 40px 90px -20px rgba(0,0,0,.9)}
+.overlay.open .sheet{transform:none}
+.x{position:absolute;top:14px;left:14px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:rgba(0,0,0,.5);
+  color:var(--cream);font-size:1.1rem;cursor:pointer}
+.sheet-head{text-align:center;margin-bottom:8px}
+.sheet-head .medal{width:104px;height:104px;font-size:2.6rem}
+.sheet-head h2{font-size:1.9rem;font-weight:800}
+.sheet-head .en{color:var(--muted);letter-spacing:2px;font-size:.85rem;margin-bottom:14px}
+.facts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.bio{color:var(--cream);font-size:1rem;line-height:2.1;background:rgba(198,138,69,.06);border:1px solid var(--line);
+  border-radius:14px;padding:18px 20px;margin-bottom:24px}
+.sec-t{font-size:1.05rem;font-weight:800;margin:0 0 6px;display:flex;align-items:center;gap:10px}
+.sec-t::after{content:'';flex:1;height:1px;background:var(--line)}
+.track{display:flex;gap:14px;align-items:center;padding:11px 4px;border-bottom:1px dashed var(--line)}
+.track:last-child{border-bottom:none}
+.track .n{color:var(--caramel);font-weight:800;min-width:36px;font-size:.95rem}
+.track .t{flex:1}
+.album{display:inline-block;margin:4px 6px 4px 0;padding:7px 18px;border-radius:12px;background:rgba(198,138,69,.1);border:1px solid var(--line);font-size:.9rem}
+/* ---------- REVEAL ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:560px){.sheet{padding:28px 20px}.toolbar-inner{gap:8px}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<header class="hero">
+  <div class="vinyl"></div>
+  <div class="hero-inner">
+    <span class="kicker">دانشنامه‌ی رپ فارسی</span>
+    <h1 class="hero-title">رپ‌نامه</h1>
+    <p class="hero-sub">از زیرزمین تا صحنه — روایت چهار نسل از صداهایی که فارسی را به ریتم خواندند</p>
+    <div class="hero-stats" id="heroStats"></div>
+    <a class="cta" href="#wall">ورود به تالار</a>
+  </div>
+  <span class="scroll-hint">اسکرول کن</span>
+</header>
+
+<div class="toolbar">
+  <div class="toolbar-inner">
+    <label class="search"><span>🔍</span><input id="q" type="search" placeholder="جست‌وجوی آرتیست…"></label>
+    <div class="tabs" id="tabs"></div>
+    <select class="sortsel" id="sort">
+      <option value="gen">مرتب‌سازی: نسل</option>
+      <option value="alpha">مرتب‌سازی: الفبا</option>
+    </select>
+  </div>
+</div>
+
+<main class="wall" id="wall"></main>
+
+<section class="eras reveal">
+  <h2>چهار نسل، یک روایت</h2>
+  <p>رپ فارسی را معمولاً در چهار موج می‌خوانند؛ از پیشگامان زیرزمین تا صدای امروز.</p>
+  <div class="era-row">
+    <div class="era"><div class="n">۱</div><h3>نسل اول — پیشگامان</h3><p>نخستین صداها؛ رپ فارسی از زیرزمین تهران متولد شد و راه را باز کرد.</p></div>
+    <div class="era"><div class="n">۲</div><h3>نسل دوم — تثبیت</h3><p>گسترش دایره‌ی مخاطب؛ سبک‌ها متنوع‌تر و صحنه جدی‌تر شد.</p></div>
+    <div class="era"><div class="n">۳</div><h3>نسل سوم — موج تازه</h3><p>نسل اینترنت؛ تولید خانگی، انتشار مستقل و صداهای تازه‌ی فراوان.</p></div>
+    <div class="era"><div class="n">۴</div><h3>نسل چهارم — امروز</h3><p>ترپ و ملودیک؛ رپ فارسی در جریان اصلی موسیقی ایران.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">رپ‌نامه</div>
+  <p>نسخه‌ی اول — این دانشنامه در حال تکمیل است و به‌زودی آرتیست‌های بیشتری اضافه می‌شود.</p>
+</footer>
+
+<div class="overlay" id="overlay">
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<script>
+const ARTISTS = [{"active_from":"۱۳۷۹","albums":["جنگل آسفالت","مُجاز"],"alias_fa":"هیچ‌کس","bio":"سروش لشکری با نام هنری هیچ‌کس یکی از پیشگامان رپ فارسی است و هوادارانش او را «پدر رپ فارسی» می‌نامند. او از بنیان‌گذاران گروه‌های ۰۲۱، صامت و ملتفت است و نخستین آلبوم رسمی‌اش «جنگل آسفالت» (۱۳۸۵) نقطه عطفی در رپ فارسی به‌شمار می‌رود. آثار او بیشتر درباره مسائل اجتماعی و فرهنگی ایران است و اکنون در لندن زندگی می‌کند.","city_fa":"تهران","generation":1,"id":"hichkas","name_en":"Hichkas","name_fa":"سروش هیچ‌کس","sources":["ویکی‌پدیا"],"status_fa":"مهاجرت کرده و فعال","tags":["رپ اعتراضی","بوم‌بپ","هیپ‌هاپ"],"tracks":["قانون","اختلاف (اینجا تهرانه)","برپا","زندان"]},{"active_from":"۱۳۸۰","albums":[],"alias_fa":"یاس","bio":"یاسر بختیاری با نام هنری یاس یکی از پیشگامان رپ فارسی و از کم‌حاشیه‌ترین رپرهای ایران است. او با متن‌های اجتماعی، سیاسی و انسانی‌اش شناخته می‌شود و با ترک «بم» (۱۳۸۲) که پس از زلزله بم منتشر شد به شهرت رسید. ترک «سی‌دی رو بشکن» (۱۳۸۵، با همکاری آمین) در روزهای نخست انتشار نزدیک به یک میلیون بار دانلود شد.","city_fa":"تهران","generation":1,"id":"yas","name_en":"Yas","name_fa":"یاسر بختیاری","sources":["ویکی‌پدیا","مصاحبه"],"status_fa":"فعال","tags":["رپ اعتراضی","رپ اجتماعی"],"tracks":["بم","سی‌دی رو بشکن","هویت من","باغ"]},{"active_from":"۱۳۷۸","albums":["جهنم ساکت","آغاز اینجاست","دوران طلایی"],"alias_fa":"رضا پیشرو","bio":"محمدرضا ناصری آزاد با نام هنری رضا پیشرو از رپرهای نسل اول رپ فارسی است که فعالیتش را با لقب 3PAC آغاز کرد. او از هم‌بنیان‌گذاران گروه صامت همراه هیچ‌کس بود و آلبوم «جهنم ساکت» (۱۳۸۶) از آثار مهم اوست. یاس او را «یکی از بهترین خوانندگان رپ ایران» دانسته و پیشرو اکنون ساکن استانبول و فعال است.","city_fa":"تهران","generation":1,"id":"reza-pishro","name_en":"Reza Pishro","name_fa":"محمدرضا ناصری آزاد","sources":["ویکی‌پدیا"],"status_fa":"مهاجرت کرده و فعال","tags":["گنگستا رپ","رپ اعتراضی","بوم‌بپ"],"tracks":["داد بزن پیشرو","واقعیت","جهنم ساکت","برو از پیش من","ما با همیم"]},{"active_from":"۱۳۸۰","albums":["۲۴ ساعت","سکوت","اشتباه خوب"],"alias_fa":"بهرام","bio":"بهرام نورایی با نام هنری بهرام رپر و تهیه‌کننده نسل یک رپ فارسی است که با ترانه جنجالی «نامه‌ای به رئیس‌جمهور» (۱۳۸۶) خطاب به محمود احمدی‌نژاد مشهور شد و بابت آن بازداشت شد. آلبوم «۲۴ ساعت» (۱۳۸۷) با ترک «اینجا ایرانه» از سوی مجله رولینگ استون ستوده شد و آلبوم «سکوت» (۱۳۹۰) شامل نخستین اثر انتزاعی هیپ‌هاپ ایران، «خورشید خانم» است. او از سال ۱۳۹۰ ساکن استکهلم سوئد است.","city_fa":"تهران","generation":1,"id":"bahram","name_en":"Bahram","name_fa":"بهرام نورایی","sources":["ویکی‌پدیا"],"status_fa":"مهاجرت کرده و فعال","tags":["رپ اعتراضی","رپ انتزاعی","هیپ‌هاپ تجربی"],"tracks":["نامه‌ای به رئیس‌جمهور","اینجا ایرانه","خورشید خانم","ما با همیم"]},{"active_from":"۱۳۸۳","albums":["از خانه تا گور","همیشگی","خداحافظی"],"alias_fa":"عرفان","bio":"عرفان حاج‌رسولی‌ها با نام هنری عرفان پایدار، رپر نسل اول و بنیان‌گذار لیبل پایدار (۱۳۸۵) است که از آمریکا فعالیت می‌کند. آلبوم «از خانه تا گور» (۱۳۸۶) او نخستین آلبوم رپ فارسی بود که در بازار جهانی به فروش رسید و آلبوم «همیشگی» (۱۳۸۹) نیز با همین کیفیت در سطح جهان منتشر شد. لیبل پایدار در معرفی آرتیست‌هایی چون بهزاد لیتو و گسترش سبک ترپ در رپ فارسی نقش داشت.","city_fa":"","generation":1,"id":"erfan","name_en":"Erfan","name_fa":"عرفان حاج‌رسولی‌ها","sources":["ویکی‌پدیا","مصاحبه"],"status_fa":"مهاجرت کرده و فعال","tags":["رپ مین‌استریم","ترپ","R&B"],"tracks":["تصمیم","راه من","خط من","پایدار ۱"]},{"active_from":"۱۳۸۱","albums":["زاخارنامه"],"alias_fa":"زدبازی","bio":"زدبازی یک گروه موسیقی رپ فارسی است که از سال ۱۳۸۱ با همکاری سامان ویلسون و مهراد هیدن شکل گرفت و سهراب ام‌جی، سیجل، علیرضا جی‌جی و نسیم بعداً به آن پیوستند. این گروه از قدیمی‌ترین گروه‌های رپ ایران و پیشگام سبک گنگستا رپ در ایران شناخته می‌شود و محبوب‌ترین ترکش «تابستون کوتاهه» (۱۳۸۶) است. پس از وقفه‌ای چندساله، گروه در سال ۱۳۹۹ با ترک‌های «یخ» و «بچه محل» بازگشت.","city_fa":"تهران","generation":1,"id":"zedbazi","name_en":"Zedbazi","name_fa":"زدبازی","sources":["ویکی‌پدیا"],"status_fa":"فعال","tags":["گنگستا رپ","رپ مین‌استریم","هیپ‌هاپ"],"tracks":["تابستون کوتاهه","تهران مال منه","اوبی","بیتاب","بچه محل"]},{"active_from":"۱۳۸۲","albums":["زیر همکف","تتلیتی","من"],"alias_fa":"امیر تتلو","bio":"امیرحسین مقصودلو با نام هنری امیر تتلو خواننده و ترانه‌نویس ایرانی است که فعالیتش را از سال ۱۳۸۲ و در ۱۶ سالگی آغاز کرد؛ ابتدا در سبک پاپ و با گروه TNT همراه حسین تهی، و سپس با سفر به دبی و یادگیری R&B زیر نظر شاهرخ سالار. نخستین آلبومش «زیر همکف» (۱۳۹۰) و دومین آلبومش «تتلیتی» (۱۳۹۲) بود و ترک جنجالی «انرژی هسته‌ای» (۱۳۹۴) را با همکاری نیروی دریایی ارتش ساخت. فعالیت هنری او پس از زندانی شدن در سال ۱۴۰۲ در حالت تعلیق است.","city_fa":"تهران","generation":1,"id":"amir-tataloo","name_en":"Amir Tataloo","name_fa":"امیرحسین مقصودلو","sources":["ویکی‌پدیا"],"status_fa":"در بازداشت از ۱۴۰۲","tags":["R&B","رپ","پاپ"],"tracks":["انرژی هسته‌ای","زیر همکف","مغز در رفته","حالمون خوبه"]},{"active_from":"۱۳۷۸","albums":["ناقابل"],"alias_fa":"حصین","bio":"حسین رحمتی با نام هنری حصین (پیش‌تر حسین ابلیس) از رپرهای نسل اول رپ فارسی است که فعالیتش را از سال ۱۳۷۸ آغاز کرد و گروه ۰۵۱ را در سال ۱۳۸۳ در مشهد پایه گذاشت. ترک «کل کل نکن» او نخستین دیس رپ فارسی به‌شمار می‌رود و ترک سیاسی «۱۸ تیر» از پرسر‌و‌صداترین آثار اوست. آلبوم مشترک «ناقابل» را در سال ۲۰۱۷ با شایع منتشر کرد.","city_fa":"تهران","generation":1,"id":"ho3ein","name_en":"Ho3ein","name_fa":"حسین رحمتی","sources":["ویکی‌پدیا"],"status_fa":"فعال","tags":["رپ اعتراضی","بوم‌بپ","دیس"],"tracks":["۱۸ تیر","کل کل نکن","تو زنده میمونی","دلخوشی"]},{"active_from":"۱۳۸۷","albums":["گوزن","نگار","کویر"],"alias_fa":"علی سورنا","bio":"علی خدامی با نام هنری علی سورنا، رپر، ترانه‌نویس و آهنگساز ایرانی است که از سال ۱۳۸۷ فعالیت زیرزمینی خود را آغاز کرد و به «مرد تنها» معروف است چون بیشتر آثارش را به‌صورت تکی اجرا می‌کند. اشعارش با ادبیات موجز و شاعرانه به موضوعات سیاسی و اجتماعی، از جمله جایگاه زن در جامعه می‌پردازد. آلبوم‌های «گوزن»، «نگار»، «کویر» و «مرد تنها» از مهم‌ترین آثار اوست و آلبوم مشترک «خون خورشید» را در ۱۴۰۳ با بهرام نورایی منتشر کرد.","city_fa":"گرمسار","generation":2,"id":"ali-sorena","name_en":"Ali Sorena","name_fa":"علی خدامی","sources":["ویکی‌پدیا"],"status_fa":"فعال","tags":["رپ اعتراضی","رپ فارسی"],"tracks":["ناخدا جلال","گوزن","گنجشککا","پشت این جنگ‌ها","گریز از مرکز"]},{"active_from":"۱۳۸۸","albums":["عدل","حق","عشق"],"alias_fa":"فدایی","bio":"اشکان سرانجام با نام هنری فدایی، رپر و ترانه‌نویس ایرانی و عضو گروه ملتفت است که اولین آهنگ رسمی‌اش «ایران ایران» را در پی اعتراضات ۱۳۸۸ منتشر کرد. آثار او غالباً مضامین سیاسی و ضد نظام جمهوری اسلامی دارد و به لقب «گلادیاتور ادبیات» شناخته می‌شود. او اکنون در فرانسه زندگی می‌کند و آلبوم‌های «عدل»، «حق» و «عشق» را در کارنامه دارد.","city_fa":"تهران","generation":2,"id":"fadaei","name_en":"Fadaei","name_fa":"اشکان سرانجام پیربازاری","sources":["ویکی‌پدیا"],"status_fa":"مهاجرت کرده و فعال","tags":["رپ اعتراضی","رپ سیاسی"],"tracks":["ایران ایران","چی شنیدی؟","زندگی","سرزمین مادری"]},{"active_from":"","albums":["کرم","دو به شک","اینجانب"],"alias_fa":"شایع","bio":"محمدرضا داداش‌پور با نام هنری شایع، رپر و ترانه‌نویس تهرانی است که از اواخر دهه ۱۳۸۰ وارد رپ فارسی شد و نخستین قطعه‌اش «یه روز خوب میاد؟» را در ۱۷ سالگی منتشر کرد. پس از تحسین حصین به گروه کاغذ رکورد دعوت شد و سال‌ها بدون نمایش چهره فعالیت می‌کرد. با صدای خاص و روایت‌های صادقانه و واقع‌گرایانه‌اش از تأثیرگذارترین چهره‌های رپ فارسی به‌شمار می‌رود.","city_fa":"تهران","generation":2,"id":"shayea","name_en":"Shayea","name_fa":"محمدرضا داداش‌پور","sources":["ویکی‌پدیا"],"status_fa":"فعال","tags":["رپ خیابانی","رپ اجتماعی","هیپ‌هاپ"],"tracks":["کرم","تنگی نفس","صبر","این‌جانب","دارم"]},{"active_from":"۱۳۸۹","albums":[],"alias_fa":"داریوش تبهکار","bio":"داریوش علیزاده با نام هنری داریوش تبهکار، رپر ایرانی متولد اهواز است که در سال ۱۳۸۹ با آهنگ «تبهکار» وارد صحنه هیپ‌هاپ ایران شد. او با متن‌های صریح و ریتم قوی به روایت زندگی شهری و دغدغه‌های نسل جوان می‌پردازد و عضوی از گروه ملتفت بوده است. از همکاری‌های شناخته‌شده او می‌توان به «موی پریشون» با سروش هیچکس اشاره کرد.","city_fa":"اهواز","generation":2,"id":"dariush-tabahkar","name_en":"Dariush","name_fa":"داریوش علیزاده","sources":["وب‌سایت‌های موسیقی"],"status_fa":"فعال","tags":["رپ خیابانی","رپ اجتماعی"],"tracks":["تبهکار","بالاتر","طهرون","هرت","موی پریشون"]},{"active_from":"۱۳۸۹","albums":["زمستون اومد و رفت","ابرهای نقره‌ای","آیت الترپ"],"alias_fa":"جیدال","bio":"علی غنی‌نژاد با نام هنری جیدال (Gdaal)، رپر و خواننده ایرانی متولد تهران است که از اوایل دهه ۱۳۹۰ وارد دنیای رپ فارسی شد. او با انتشار اولین آلبومش «زمستون اومد و رفت» در ۱۳۹۴ به‌عنوان استعدادی تازه شناخته شد. از همکاری‌های او می‌توان به آلبوم «آیت الترپ» با عرفان، آلبوم «بنفش» با مدگل و ترک «اون داره میره» با عرفان اشاره کرد.","city_fa":"تهران","generation":2,"id":"jidal","name_en":"Jidal","name_fa":"علی غنی‌نژاد","sources":["gdaal.com","ویکی‌پدیا"],"status_fa":"فعال","tags":["رپ فارسی","ترپ"],"tracks":["نقره‌ای","اون داره میره","لیگ دیگه"]},{"active_from":"","albums":["یادگاری"],"alias_fa":"سپهر خلسه","bio":"رپر و ترانه‌سرای ایرانی متولد ۱۳۶۷ در تهران. فعالیت موسیقی را با ترانه‌سرایی آغاز کرد و در ۲۲ سالگی در لندن زیر نظر سروش هیچکس وارد خوانندگی شد. نخستین آلبوم بلندش «یادگاری» در سال ۱۳۹۴ منتشر شد و جایگاه او را در میان رپرهای مطرح فارسی تثبیت کرد. اکنون ساکن کاناداست و کنسرت‌هایش را در خارج از ایران برگزار می‌کند.","city_fa":"تهران","generation":3,"id":"sepehr-khalse","name_en":"Sepehr Khalse","name_fa":"سپهر خلسه","sources":["ویکی‌پدیا","هورادی"],"status_fa":"مهاجرت کرده و فعال","tags":["رپ","ترپ"],"tracks":["پاکت نامه","لاین بازی","صلیبی","کارای بچگی"]},{"active_from":"۱۳۸۱","albums":["تهی","سوپر استار"],"alias_fa":"حسین تهی","bio":"خواننده و ترانه‌سرای رپ، هیپ‌هاپ و پاپ متولد ۱۳۶۷ در تهران. از ۱۳۷۹ به‌صورت غیرحرفه‌ای و از ۱۳۸۱ حرفه‌ای وارد موسیقی شد. با آهنگ‌های «رقص اندام» و «کلید» به شهرت رسید و مدتی با امیر تتلو در قالب T&T و گروه 021 همکاری کرد. اکنون ساکن لس‌آنجلس آمریکاست.","city_fa":"تهران","generation":3,"id":"hossein-tohi","name_en":"Hossein Tohi","name_fa":"سید حسین موسوی","sources":["ویکی‌پدیا","فتوکده"],"status_fa":"مهاجرت کرده و فعال","tags":["رپ","هیپ‌هاپ","پاپ"],"tracks":["کلید","رقص اندام","فساد","برو از پیش من"]},{"active_from":"","albums":["اورد دوز ۳"],"alias_fa":"امیر خلوت","bio":"رپر فارسی متولد ۱۳۷۱ در غرب تهران. آلبوم «اورد دوز ۳» با ۱۸ ترک در بهمن ۱۳۹۷ از او منتشر شد. آهنگ‌هایی مثل «بی رنگ» و «تهران مال تو نیست» از آثار شناخته‌شده اوست و همکاری‌هایی با شایع و عرفان هم داشته است.","city_fa":"تهران","generation":3,"id":"amir-khalvat","name_en":"Amir Khalvat","name_fa":"امیرحسین ترکمان","sources":["رادیو جوان","ام‌اس‌بی موزیک"],"status_fa":"فعال","tags":["رپ","هیپ‌هاپ"],"tracks":["بی رنگ","تهران مال تو نیست","چقد پول"]},{"active_from":"","albums":[],"alias_fa":"ایمانمون","bio":"رپر فارسی‌زبان که در ارتباط با لیبل پایدار فعالیت می‌کند. با ترک‌هایی مثل «چی‌چی‌ها» و «گری گوس» (به‌همراه پارسا سیمپسون) شناخته شد. انتشار آثار تازه‌اش از جمله «قصه» و «چمدون» همچنان ادامه دارد.","city_fa":"","generation":3,"id":"imanemoon","name_en":"Imanemoon","name_fa":"ایمانمون","sources":["موزیک ۳۰۳","ونوس موزیک"],"status_fa":"فعال","tags":["رپ","ترپ"],"tracks":["چی‌چی‌ها","گری گوس","قصه"]},{"active_from":"۱۳۹۰","albums":["خاکستری","بیست و سه","تراپی"],"alias_fa":"بهزاد لیتو","bio":"رپر، ترانه‌سرا و آهنگساز ایرانی و از اعضای اولیه لیبل پایدار که بعدتر مستقل کار کرد. با الهام از دریک، سبک هیپ‌هاپ مدرن و ترپ را در رپ فارسی جا انداخت و هوادارانش او را «دریک فارسی» می‌خوانند. همکاری‌های موفقش با سیجل، سامی بیگی و سپهر خلسه از محبوب‌ترین آثار دهه ۹۰ است و اکنون ساکن دبی است.","city_fa":"","generation":3,"id":"behzad-leito","name_en":"Behzad Leito","name_fa":"بهزاد داورپناه","sources":["تاپ‌ناز","ویکی‌پدیا"],"status_fa":"مهاجرت کرده و فعال","tags":["ترپ","رپ","هیپ‌هاپ"],"tracks":["فوق‌العاده","ناب","دوستام هستن","خاکستری"]},{"active_from":"","albums":["کاناشی","شاخ قرمز"],"alias_fa":"پوتک","bio":"رپر، یوتیوبر و تهیه‌کننده ایرانی متولد ۱۳۷۰ در تهران. با فست‌رپ و تولید بسیار پرکار شناخته می‌شود و بیش از سیزده آلبوم و شمار زیادی سینگل منتشر کرده است. دیس و دیس‌بکش با سپهر خلسه در فضای مجازی جنجالی شد و در اینستاگرام و یوتیوب فعالیت پررنگی دارد.","city_fa":"تهران","generation":3,"id":"pooria-putak","name_en":"Pooria Putak","name_fa":"پوریا عرب","sources":["ویکی‌پدیا","ام‌اس‌بی موزیک"],"status_fa":"مهاجرت کرده و فعال","tags":["رپ","فست‌رپ","هیپ‌هاپ"],"tracks":["نسخ","توله سگ","نمی‌خوام","لالی پاپ"]},{"active_from":"","albums":["کپسول","نسخه","لیک‌شت"],"alias_fa":"هیپ‌هاپولوژیست","bio":"سروش ولی‌زاده با نام هنری هیپ‌هاپولوژیست یکی از شناخته‌شده‌ترین چهره‌های نسل چهارم رپ فارسی است. با آلبوم «کپسول» (۲۰۲۲) دیده شد و سپس با همکاری اشکان کاگان دو آلبوم پرمخاطب «نسخه» و «لیک‌شت» را در ۲۰۲۳ منتشر کرد. ترک‌های «داستان»، «یالا» و «بانک» از پرشنونده‌ترین آثار او هستند و دیس‌بازی پرسر‌و‌صدایش با گاد پوری نیز از حواشی معروف صحنه رپ است.","city_fa":"","generation":4,"id":"hiphopologist","name_en":"Hiphopologist","name_fa":"سروش ولی‌زاده","sources":["ویکی‌پدیا","hiphopologist.bio"],"status_fa":"فعال","tags":["ترپ","دریل","رپ"],"tracks":["داستان","یالا","بانک","قرص ۲"]},{"active_from":"۱۴۰۱","albums":["فیل"],"alias_fa":"گاد پوری","bio":"گاد پوری رپر نسل چهارم است که با ترک «کیلو کیلو» و سپس «ak46» به شهرت رسید و از پرطرفدارترین رپرهای این نسل شد. آلبوم ۲۷‌ترکه «فیل» از مهم‌ترین انتشارهای اوست. ترک‌هایی مثل «تتتپتتت»، «حالا چی» و «اوراقی» از آثار پرشنونده او هستند و بیف او با هیپ‌هاپولوژیست یکی از جنجالی‌ترین رقابت‌های رپ فارسی بوده است.","city_fa":"","generation":4,"id":"god-poori","name_en":"God Poori","name_fa":"گاد پوری","sources":["ایرانیان‌سلبریتی","ویکی‌پدیا"],"status_fa":"فعال","tags":["ترپ","دریل","رپ"],"tracks":["کیلو کیلو","تتتپتتت","حالا چی","اوراقی"]},{"active_from":"۱۳۹۹","albums":["مروارید جوان"],"alias_fa":"دورچی","bio":"محمد رشیدیان درچه با نام هنری دورچی، رپر نسل چهارم اهل کرج در سبک ترپ ملودیک و مامبل رپ است که فعالیتش را در ۱۳۹۹ با آهنگ «طلوع» آغاز کرد. با ترک «چیزهای لعنتی» در تابستان ۱۴۰۲ به شهرت فراگیر رسید و به‌خاطر همین ترک با الفاظ رکیک ده روز بازداشت شد. آلبوم «مروارید جوان» (۲۰۲۵) را در لیبل Love6boyz منتشر کرده است.","city_fa":"کرج","generation":4,"id":"dorchi","name_en":"Dorchi","name_fa":"محمد رشیدیان درچه","sources":["ویکی‌پدیا"],"status_fa":"فعال","tags":["ترپ ملودیک","مامبل رپ","رپ"],"tracks":["چیزهای لعنتی","پیله","ممفیس","طلوع"]},{"active_from":"","albums":[],"alias_fa":"چرسی","bio":"مهدی جعفرپور با نام هنری چرسی، رپر نسل چهارم متولد بندرعباس با اصالت بوشهری و یکی از اعضای اصلی گروه رپ «گمبرون» در کنار یانگ صادن است. ترک‌هایی مثل «ک کی کو»، «گمبرون» و همکاری «ایول» با هیپ‌هاپولوژیست، یانگ صادن و پوری از آثار شناخته‌شده او هستند. مصاحبه پرحاشیه او با علی ضیا درباره سختی‌های کودکی‌اش نیز بازتاب زیادی داشت.","city_fa":"بندرعباس","generation":4,"id":"charsi","name_en":"Charsi","name_fa":"مهدی جعفرپور","sources":["ویکی‌پدیا","پلاس"],"status_fa":"فعال","tags":["دریل","ترپ","رپ"],"tracks":["ک کی کو","گمبرون","ایول"]},{"active_from":"","albums":[],"alias_fa":"سجاد شاهی","bio":"سجاد شاهی رپر نسل چهارم در سبک‌های ترپ و دریل است که با ترک‌های خیابانی و پرحاشیه‌اش در ساندکلاود و رسانه‌های رپ دیده شد. آلبوم «تاج» از مهم‌ترین انتشارهای اوست و ترک‌هایی مثل «تا ناموس»، «فومو» و «KGB» از آثار پرشنونده او هستند. با چهره‌هایی چون برادران تی‌ام و پوریا پوتک همکاری کرده است.","city_fa":"","generation":4,"id":"sajad-shahi","name_en":"Sajad Shahi","name_fa":"سجاد شاهی","sources":["ویکی‌پدیا","دلساموزیک"],"status_fa":"فعال","tags":["ترپ","دریل","رپ"],"tracks":["تا ناموس","فومو","KGB","X"]},{"active_from":"","albums":["نسخه","لیک‌شت"],"alias_fa":"اشکان کاگان","bio":"اشکان کاگان تهیه‌کننده و رپر مازندرانی است که به‌عنوان زوج هنری هیپ‌هاپولوژیست شناخته می‌شود. آلبوم‌های «نسخه» و «لیک‌شت» محصول همکاری اوست و ترک‌هایی مثل «آدم فضایی» و «فروتن باش» را با سروش ولی‌زاده اجرا کرده است. سبک تولید او در هیپ‌هاپ، ترپ و دریل فارسی تأثیرگذار بوده و دیسکوگرافی‌اش در پلتفرم‌هایی مثل Tidal و Shazam ثبت شده است.","city_fa":"","generation":4,"id":"ashkan-kagan","name_en":"Ashkan Kagan","name_fa":"اشکان بشیری","sources":["hiphopologist.bio","Shazam"],"status_fa":"فعال","tags":["ترپ","دریل","هیپ‌هاپ"],"tracks":["آدم فضایی","فروتن باش"]}];
+const GEN_NAMES={1:'نسل اول',2:'نسل دوم',3:'نسل سوم',4:'نسل چهارم'};
+const GEN_SUB={1:'پیشگامان زیرزمین',2:'تثبیت و گسترش',3:'موج تازه',4:'صدای امروز'};
+const fa=n=>Number(n).toLocaleString('fa-IR');
+const fa2=n=>String(n).padStart(2,'0').replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+let state={q:'',gen:'all',favOnly:false,sort:'gen'};
+let favs=new Set(JSON.parse(localStorage.getItem('rapnameh_favs')||'[]'));
+const saveFavs=()=>localStorage.setItem('rapnameh_favs',JSON.stringify([...favs]));
+const mono=a=>((a.alias_fa||a.name_fa||'?').trim()[0]||'?');
+
+function filtered(){
+  let r=ARTISTS.filter(a=>{
+    if(state.gen!=='all'&&String(a.generation)!==String(state.gen))return false;
+    if(state.favOnly&&!favs.has(a.id))return false;
+    if(state.q){const q=state.q.trim();
+      const hay=(a.name_fa+' '+(a.name_en||'')+' '+(a.alias_fa||'')+' '+(a.tags||[]).join(' '));
+      if(!hay.includes(q))return false;}
+    return true;
+  });
+  r.sort((x,y)=>state.sort==='alpha'?x.name_fa.localeCompare(y.name_fa,'fa'):(x.generation-y.generation||x.name_fa.localeCompare(y.name_fa,'fa')));
+  return r;
+}
+function cardHTML(a){
+  const f=favs.has(a.id);
+  return `<div class="card reveal" data-id="${a.id}">
+    <button class="fav${f?' on':''}" data-fav="${a.id}">${f?'★':'☆'}</button>
+    <div class="medal">${mono(a)}</div>
+    <h3>${a.alias_fa||a.name_fa}</h3>
+    <div class="en">${a.name_en||''}</div>
+    <div class="meta"><span class="chip solid">${GEN_NAMES[a.generation]||''}</span>${a.city_fa?`<span class="chip">${a.city_fa}</span>`:''}</div>
+  </div>`;
+}
+function renderTabs(){
+  const tabs=[['all','همه'],['1','نسل اول'],['2','نسل دوم'],['3','نسل سوم'],['4','نسل چهارم'],['fav','★ علاقه‌مندی‌ها']];
+  document.getElementById('tabs').innerHTML=tabs.map(([v,t])=>{
+    const on=(v==='fav'&&state.favOnly)||(v!=='fav'&&!state.favOnly&&String(state.gen)===v);
+    return `<button class="tab${on?' on':''}" data-tab="${v}">${t}</button>`;}).join('');
+}
+function render(){
+  renderTabs();
+  const list=filtered();
+  const wall=document.getElementById('wall');
+  if(!list.length){
+    wall.innerHTML=`<div class="empty" style="margin-top:50px">چیزی پیدا نشد — عبارت دیگری را امتحان کن.</div>`;
+  }else{
+    const gens=[...new Set(list.map(a=>a.generation))].sort();
+    wall.innerHTML=gens.map(g=>{
+      const items=list.filter(a=>a.generation===g);
+      return `<div class="gen-head reveal"><span class="gen-num">${fa(g)}</span>
+        <div><h2>${GEN_NAMES[g]}</h2><p>${GEN_SUB[g]||''} · ${fa(items.length)} آرتیست</p></div>
+        <div class="gen-line"></div></div>
+        <div class="grid">${items.map(cardHTML).join('')}</div>`;
+    }).join('');
+  }
+  const tot=ARTISTS.length, tr=ARTISTS.reduce((s,a)=>s+(a.tracks||[]).length,0);
+  document.getElementById('heroStats').innerHTML=
+    `<div class="stat"><b>${fa(tot)}</b><span>آرتیست</span></div>
+     <div class="stat"><b>${fa(4)}</b><span>نسل</span></div>
+     <div class="stat"><b>${fa(tr)}</b><span>ترک شاخص</span></div>`;
+  observeReveals();
+}
+function openArtist(id){
+  const a=ARTISTS.find(x=>x.id===id); if(!a)return;
+  const f=favs.has(a.id);
+  const facts=[a.city_fa?a.city_fa+' 📍':null,a.active_from?'از '+a.active_from:null,a.status_fa||null].filter(Boolean);
+  document.getElementById('sheet').innerHTML=`
+    <button class="x" id="xBtn">✕</button>
+    <button class="fav${f?' on':''}" data-fav="${a.id}" style="top:14px;right:14px;left:auto">${f?'★':'☆'}</button>
+    <div class="sheet-head"><div class="medal">${mono(a)}</div>
+      <h2>${a.alias_fa||a.name_fa}</h2><div class="en">${a.name_en||''}</div></div>
+    <div class="facts">${facts.map(x=>`<span class="chip">${x}</span>`).join('')}<span class="chip solid">${GEN_NAMES[a.generation]||''}</span></div>
+    ${(a.tags&&a.tags.length)?`<div class="tags">${a.tags.map(t=>`<span class="chip">${t}</span>`).join('')}</div>`:''}
+    <div class="bio">${a.bio||''}</div>
+    ${(a.tracks&&a.tracks.length)?`<div class="sec-t">ترک‌های شاخص</div>${a.tracks.map((t,i)=>`<div class="track"><span class="n">${fa2(i+1)}</span><span class="t">${t}</span></div>`).join('')}`:''}
+    ${(a.albums&&a.albums.length)?`<div class="sec-t" style="margin-top:18px">آلبوم‌ها</div><div>${a.albums.map(x=>`<span class="album">${x}</span>`).join('')}</div>`:''}`;
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  document.getElementById('xBtn').onclick=closeArtist;
+}
+function closeArtist(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+let obs;
+function observeReveals(){
+  obs=obs||new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}}),{threshold:.08});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>obs.observe(el));
+}
+document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value;render();});
+document.getElementById('sort').addEventListener('change',e=>{state.sort=e.target.value;render();});
+document.getElementById('tabs').addEventListener('click',e=>{
+  const b=e.target.closest('[data-tab]');if(!b)return;
+  const v=b.dataset.tab;
+  if(v==='fav'){state.favOnly=true;}else{state.favOnly=false;state.gen=v;}
+  render();
+});
+document.addEventListener('click',e=>{
+  const f=e.target.closest('[data-fav]');
+  if(f){e.stopPropagation();const id=f.dataset.fav;
+    favs.has(id)?favs.delete(id):favs.add(id);saveFavs();render();
+    if(document.getElementById('overlay').classList.contains('open'))openArtist(id);return;}
+  const c=e.target.closest('.card[data-id]');
+  if(c)openArtist(c.dataset.id);
+});
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeArtist();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeArtist();});
+render();
+</script>
+</body>
+</html>
